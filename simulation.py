@@ -1,19 +1,21 @@
-import argparse
-parser = argparse.ArgumentParser()
-parser.add_argument("--file", help="URL to the datafile", type=str, required=True)
-args = parser.parse_args()
-main(args.url)
+def main():
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--file", "--servers", help="URL to the datafile", type=str, required=True)
+    args = parser.parse_args()
+    main(args.url)
 
-import urllib.parse
-import urllib.request
+def simulateOneServer():
+    import urllib.parse
+    import urllib.request
 
-url = 'http://s3.amazonaws.com/cuny-is211-spring2015/requests.csv'
+    url = 'http://s3.amazonaws.com/cuny-is211-spring2015/requests.csv'
 
-data = urllib.parse.urlencode(values)
-    data = data.encode('ascii')  # data should be bytes
-    req = urllib.request.Request(url, data)
-    with urllib.request.urlopen(req) as response:
-        the_page = response.read()
+    data = urllib.parse.urlencode(values)
+        data = data.encode('ascii')  # data should be bytes
+        req = urllib.request.Request(url, data)
+        with urllib.request.urlopen(req) as response:
+            the_page = response.read()
 
 class Server():
     def __init__(self, ppm):
